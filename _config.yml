@@ -23,7 +23,7 @@ email: sigve_bh@hotmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Welcome to my portfolio website. Here you will find my submissions of projects
   and assignments throughout the semester. 
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "ADA525" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://pornhub.com
 twitter_username: Nope
 github_username:  PrinceSig
