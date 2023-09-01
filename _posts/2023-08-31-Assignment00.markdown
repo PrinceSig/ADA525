@@ -29,7 +29,7 @@ The design of the fingers is at the very core of my project, and there are sever
 
 Reflection on the interaction aspect: Ideally I would like the hand to be open (fingers stretched out) as a starting position. It would then be very cool, in my opinion, if the user could touch one or several fingers and trigger the respective finger(s) to curl up. This would require sensing the small amount of force that the user exerts on a finger, and might be too advanced to be feasible. However, a simple system with 5 push buttons, each correlating to a finger, might be good enough (and way simpler). For either option, I would most likely base my solution on an Arduino microcontroller. Driving the fingers’ movement I would use either linear actuators or servo motors.
 
-#### 3. Decisions with regards to the level of complexity/realism:  
+#### 3. Decisions with regard to the level of complexity/realism:  
 -	Angle of individual fingers in relation to palm:
 Should the fingers be parallell for simplicity, or should a more ambitious and realistic model be the goal? Probably a very simplified version for the first iteration, and then gradually making the model more complex in later iterations (the level of complexity will depend on my confidence in my own ability to reproduce my visions/intentions in both design and printed product...).
 -	Number of joints in the thumb:
