@@ -4,17 +4,18 @@ title:  "Assignment 00: Final project outline"
 date:   2023-08-31 12:51:13 +0200
 categories: jekyll update
 ---
-<!-- You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated. -->
 
-Robotic hand
+**Robotic hand**
 
 For my final project I plan to make a hand model, with 5 movable fingers. The idea is that the fingers can be individually actuated, so that a number of hand gestures can be animated. The wrist may also revolute (in the plane of the palm), resulting in a waving motion. For the purpose of simplicity and feasibility, I plan to have the fingers bent towards the palm by default using spiral springs in each finger joint, and then, using an electric motor or actuator and a system of wires/strings of some sort, the fingers can be stretched out. This results in a hand that is weak in the "squeeze direction", and followingly very safe for human interaction. 
 
 ![3D model](/_site/assets/Ass00_Hand.jpg)
 <!-- <object data="../assets/Assignment_00.pdf" width="1000" height="1000" type='application/pdf'></object> -->
+<!-- PDF stuff that didn't work^ -->
 
-Design decisions/questions:
-1.	How should the hand function mechanially?
+**Design decisions/challenges:**
+
+1. How should the hand function mechanially?
 
 -	Finger and joint design 
 -	Integration of spiral springs
@@ -25,14 +26,14 @@ Design decisions/questions:
 Reflection on mechanical function: The most important mechanical aspect of the piece is probably actuation of the fingers. I want to accomplish a system that can both bend and stretch each finger individually. I have envisioned a relatively simple system utilizing a wire/string to stretch the fingers out. Mechanical stoppers incorporated in the design of the parts will make sure the fingers can not bend too far or in the wrong direction. In addition to the wire/string system, I want to use spiral springs in each of the joints to make the fingers curl up towards the palm by default. This would result in a hand that is quite weak in the squeeze direction, meaning it would be very safe for human interaction. Making use of spiral springs will require a well thought out design, considering I need to fit the springs into the internal geometry of the separate finger parts. An alternative to my proposed system is "double action" actuation, meaning there is no default position (neither spring-loaded or otherwise) and the fingers are actively moved in both directions. This might be possible to accomplish using a mechanical concept similar to that of a typical kids' sandbox/toy excavator. The latter «double action» solution would make the separate joints of each finger codependant, but for this project I don’t see that as a significant disadvantage. The challenge of designing the mechanism might prove to be significant, though.
 The design of the fingers is at the very core of my project, and there are several things to consider. For example, I might make each finger «link» a simple square tube with revoluting joints connecting them. Making each part separable along the length of the finger is also an attractive option, as it could make assembly a bigger, but simpler process (as well as possibly illuminating certain design issues that may arise, as the mechanisms could be made more easily observable). 
 
-2.	Interaction and interface
+2. Interaction and interface
 
 -	Touch/pressure sensitivity
 -	Push buttons
 
 Reflection on the interaction aspect: Ideally I would like the hand to be open (fingers stretched out) as a starting position. It would then be very cool, in my opinion, if the user could touch one or several fingers and trigger the respective finger(s) to curl up. This would require sensing the small amount of force that the user exerts on a finger, and might be too advanced to be feasible. However, a simple system with 5 push buttons, each correlating to a finger, might be good enough (and way simpler). For either option, I would most likely base my solution on an Arduino microcontroller. Driving the fingers’ movement I would use either linear actuators or servo motors.
 
-3.	Decisions with regards to the level of complexity/realism:
+3. Decisions with regards to the level of complexity/realism:
 
 -	Angle of individual fingers in relation to palm:
 Should the fingers be parallell for simplicity, or should a more ambitious and realistic model be the goal? Probably a very simplified version for the first iteration, and then gradually making the model more complex in later iterations (the level of complexity will depend on my confidence in my own ability to reproduce my visions/intentions in both design and printed product...).
@@ -50,6 +51,7 @@ Should a waving motion be made possible? This is not a priority in the first few
 
 
 
+<!-- You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated. -->
 
 <!-- Jekyll requires blog post files to be named according to the following format:
 
