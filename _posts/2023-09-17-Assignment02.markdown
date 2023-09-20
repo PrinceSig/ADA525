@@ -8,12 +8,15 @@ categories: jekyll update
 ### **3D printing a design that combines multiple parts**  
 
 #### 1. The thing I'm trying to make
-...is a sort of test mechanism, that will hopefully aid me in planning and executing my final project. I want to see how my envisioned mechanism for finger actuation would work (and whether it would function at all). To achieve this, I want to design a simplified and slightly oversized 2D representation of a "finger". In this assignment I want to design individual finger links that are easily joined together by hand, without additional fasteners. 
+...is a sort of test mechanism, that will hopefully aid me in planning and executing my final project. I want to see how my envisioned mechanism for finger actuation would work (and whether it would function at all). 
 
-#### 2. Progress in CAD
+#### 2. How I plan to make my thing
+I want to design a simplified and slightly oversized 2D representation of one of my robotic arm's fingers. In this assignment I want to design individual finger links that are easily joined together by hand, without additional fasteners. 
+
+#### 3. Progress in CAD
 I designed my thing in Fusion360. Here are some pictures I took along the way.
 
-#### 3. Slicer parameters
+#### 4. Slicer parameters
 The way I set up the slicer did not involve any advanced changes to the default setup. However, I generally use a sparse infill density that is reduced to 12% to save some time and material. For this specific print job I enabled supports to make sure that all overhang parts were printed as well as possible.
 
-#### 4. End result
+#### 5. End result
