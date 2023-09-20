@@ -14,9 +14,11 @@ categories: jekyll update
 I want to design a simplified and slightly oversized 2D representation of one of my robotic arm's fingers. In this assignment I want to design individual finger links that are easily joined together by hand, without additional fasteners. 
 
 #### 3. Progress in CAD
-I designed my thing in Fusion360. Here are some pictures I took along the way.
+I designed my thing in Fusion360. <!-- Here are some pictures I took along the way. -->
+Through a couple of iterations I looked at different ways to assemble the separate parts. I made a test print of a different assembly style, but it quickly failed due to wrongly assumed tolerances. Trial and error will be important in finding out just how parts should be dimensioned in order to fit perfectly together, especially for this type of assembly.
 
 #### 4. Slicer parameters
 The way I set up the slicer did not involve any advanced changes to the default setup. However, I generally use a sparse infill density that is reduced to 12% to save some time and material. For this specific print job I enabled supports to make sure that all overhang parts were printed as well as possible.
 
 #### 5. End result
+In the end I ended up with a simple solution assembly-wise, where the parts are simply snapped together. A circular protrusion on one part fits into a circular groove on another. This does not make a very rigid assembly, and other solutions might have been better.  

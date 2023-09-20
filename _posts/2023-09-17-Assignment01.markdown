@@ -6,22 +6,20 @@ categories: jekyll update
 ---
 
 ### **Robotic hand**  
-For my final project, that is a robotic hand, I will be required to 3D print a bunch of separate parts. I have modeled the (currently envisioned version of my) robotic hand using Fusion360. Assembling all the separate parts (in Fusion) proved to be a challenge, but in the end I seem to have managed to pull it off. 
+For my final project, that is a robotic hand, I will be required to 3D print a bunch of separate parts. I have modeled the (currently envisioned version of my) robotic hand using Fusion360. Assembling the separate parts inside Fusion360 proved to be a challenge, but in the end I seem to have sort of managed.  
 
 #### 1. What different parts does my design require?  
 - Palm	
-- Fingers, mostly consisting of 3 links (only 2 for the thumb)
--	Actuation mechanism
+- Fingers, most consisting of 3 links (only 2 for the thumb)
+- Actuation mechanism  
 
 #### 2. What manufacturing processes does my design require?  
--	3D Printing should cover my manufacturing needs, as far as I can tell at this point. 
+-	3D Printing should cover my manufacturing needs, as far as I can tell.  
 
 #### 3. Does my project need any external components?
-- For now I haven't finalized all the details, so I'm not quite sure what will be needed. However, it is likely that some ready-made parts, such as spiral springs and fasteners, will be utilized.
+- For now not all of the details are finalized, so I'm not quite sure what will be needed. However, it is likely that some ready-made parts, such as spiral springs and fasteners, will be utilized.  
 
 #### 4. How does the mechanical movement work?
-- Finger actuation: Figuring out how my finger actuation is going to function is priority number one, but nothing is set in stone yet. Thread/wire actuation seems probable. 
-- Finger movement: The joints of the fingers will be codependent (either every joint bends or no joint bends). The thumb will have one less link and joint than the other digits.
-- Wrist rotation: Any movement beyond bending/curling of fingers is considered non-vital, and therefore excluded from my design at this point.
-
-
+- Finger actuation: Figuring out how my finger actuation is going to function is priority number one, but nothing is set in stone yet. Thread/wire actuation seems probable, likely in combination with spiral springs. I think simplicity in this area, as far as that is possible, is key to making the project feasible. 
+- Finger movement: The joints of the fingers will be codependent (either every joint bends or no joint bends). The thumb will have one less link and joint than the other digits, but should move and behave in a similar manner. 
+- Wrist rotation: I consider any movement beyond bending/curling of fingers as non-vital, and therefore I have excluded these options from my design for now.  
