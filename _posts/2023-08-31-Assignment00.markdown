@@ -10,7 +10,7 @@ For my final project I plan to make a hand model, with 5 movable fingers. The id
 
 <!-- ![3D model](/_site/assets/Ass00_Hand.png) -->
 
-![image-title-here](/assets/Ass00_Hand.png){:width="25%"}
+![3D model](/assets/Ass00_Hand.png){:width="25%"}
 
 <!-- <object data="../assets/Assignment_00.pdf" width="1000" height="1000" type='application/pdf'></object> -->
 <!-- PDF stuff that didn't work^ -->
