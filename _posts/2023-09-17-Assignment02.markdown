@@ -22,3 +22,4 @@ The way I set up the slicer did not involve any advanced changes to the default 
 
 #### 5. End result
 In the end I ended up with a simple solution assembly-wise, where the parts are simply snapped together. A circular protrusion on one part fits into a circular groove on another. This does not make a very rigid assembly, and other solutions might have been better.  
+The purpose of my thing was to see how my envisioned actuation mechanism would function, but in the end that did not happen. I did not find the time / did not prioritize to expand on my design and go through the necessary iterations. Therefore, my finger actuation mechanism remains a challenge for the future...
