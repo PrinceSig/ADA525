@@ -8,7 +8,7 @@ categories: jekyll update
 ### **Robotic hand**  
 For my final project I plan to make a hand model, with 5 movable fingers. The idea is that the fingers can be individually actuated, so that a number of hand gestures can be animated. The wrist may also revolute (in the plane of the palm), resulting in a waving motion. For the purpose of simplicity and feasibility, I plan to have the fingers bent towards the palm by default using spiral springs in each finger joint, and then, using an electric motor or actuator and a system of wires/strings of some sort, the fingers can be stretched out. This results in a hand that is weak in the "squeeze direction", and followingly very safe for human interaction. 
 
-![3D model](/assets/Ass00_Hand.jpg)
+![3D model](/_site/assets/Ass00_Hand.png)
 <!-- <object data="../assets/Assignment_00.pdf" width="1000" height="1000" type='application/pdf'></object> -->
 <!-- PDF stuff that didn't work^ -->
 

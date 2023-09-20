@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "Assignment 02: 3D Print"
+date:   2023-09-17 12:51:13 +0200
+categories: jekyll update
+---
+
+### **Robotic hand**  
+
+#### 1. 
