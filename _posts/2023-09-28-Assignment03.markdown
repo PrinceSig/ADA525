@@ -1,0 +1,30 @@
+---
+layout: post
+title:  "Assignment 03: Laser cut a box with finger joints"
+date:   2023-09-28 12:31:53 +0200
+categories: jekyll update
+---
+
+### **Laser cutting a box with finger joints**  
+
+#### 1. Parametric design in Fusion 360
+
+![BoxDesign](/3FusionBox.png)
+![BoxParameters](/3FusionBoxParam.png)
+
+I made a simple design using parameters for the thickness of the plywood sheets and for the width of my finger joints ("slots"). My simplistic design has only one finger per side (which is the minimum amount). I made the box using 6 identical sides, which in my opinion was the most elegant way to solve it. However, this means that I have small cube-shaped voids in the corners (3x3x3mm). In my opinion this does not affect anything for the purposes of this assignment. If necessary, I could slightly alter my design for the top and bottom and fix the corner gaps (still only needing 2 different side designs). 
+
+#### 2. Laser cutting process:
+
+![Max](/3Max.jpg)
+![LaserProcess](/3LaserProcess.jpg)
+
+In order to make my digital design into a physical object, I saved my sketch (with added offset of 0.01mm, taking the width of the laser into account) as ".dxf", and shared my file with Max. I then let Max work his magic, pressed play on the laser cutter, and almost immediately had a finished cube.
+
+![Box](/3BoxFinished.jpg)
+
+#### 3. Reflection on the opportunities offered by laser cutting technology
+
+Having the possibility to easily make any 2D shape out of plywood with a high degree of precision, offers an endless range of possibilities. Creativity and imagination is the only real limitation. 
+
+I can see myself making use of the laser cutter for my final project. I am going to need a base for my robotic hand, that will act as a foundation and also contain my electronic circuit(s). It might even be interesting to laser cut some parts for the robotic hand itself, especially in the prototyping phase. As long as the parts are simple (2 dimensions of importance), laser cutting is faster than 3D printing (laser cutting depends on outside help, though...). Therefore, it could be an option to use laser cut plywood for prototyping purposes in development of my mechanisms (e.g. finger actuation).
