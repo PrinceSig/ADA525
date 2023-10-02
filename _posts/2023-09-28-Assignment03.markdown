@@ -9,9 +9,7 @@ categories: jekyll update
 
 #### 1. Parametric design in Fusion 360
 
-![BoxDesign](/assets/images/3BoxFinished.jpg)
-![BoxDesign](/3BoxFinished.jpg)
-![BoxDesign](/posts/3BoxFinished.jpg)
+![BoxDesign](/assets/images/3FusionBox.png)
 ![BoxParameters](/assets/images/3FusionBoxParam.png)
 
 I made a simple design using parameters for the thickness of the plywood sheets and for the width of my finger joints ("slots"). My simplistic design has only one finger per side (which is the minimum amount). I made the box using 6 identical sides, which in my opinion was the most elegant way to solve it. However, this means that I have small cube-shaped voids in the corners (3x3x3mm). In my opinion this does not affect anything for the purposes of this assignment. If necessary, I could slightly alter my design for the top and bottom and fix the corner gaps (still only needing 2 different side designs). 
