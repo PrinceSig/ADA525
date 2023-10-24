@@ -9,10 +9,10 @@ categories: jekyll update
 
 #### 1. Intro
 
-My project for this assignment utilizes a gyroscope to register a minor movement (shake, tilt, push etc), and then sends an output signal that lights up a blue LED. I am using the built-in gyroscope in the Adafruit Feather Bluefruit Sense nRF52840 board. 
+My project for this assignment utilizes a gyroscope to register a minor movement (shake, tilt, push etc), and then sends an output signal that lights up a blue LED for 1 second. I am using the built-in gyroscope in the Adafruit Feather Bluefruit Sense nRF52840 board. 
 
-![Ass06_ON](https://github.com/PrinceSig/ADA525/assets/94006886/76907fb8-a957-4649-a47d-98618dca0dec){: width="250" }
-![Ass06_OFF](https://github.com/PrinceSig/ADA525/assets/94006886/fcca7386-b11e-4bf6-b826-d558e2fd3e2e){: width="250" }
+![Ass06_ON](https://github.com/PrinceSig/ADA525/assets/94006886/76907fb8-a957-4649-a47d-98618dca0dec){: width="300" }
+![Ass06_OFF](https://github.com/PrinceSig/ADA525/assets/94006886/fcca7386-b11e-4bf6-b826-d558e2fd3e2e){: width="300" }
 
 Here follows the arduino code I wrote for this project: 
 
@@ -23,10 +23,6 @@ Here follows the arduino code I wrote for this project:
 
 // put function declarations here:
 
-
-unsigned long prevMillis;
-const int timeInterval = 500;
-
 float x, y, z;
 float prevX, prevY, prevZ;
 
@@ -34,7 +30,6 @@ void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
   IMU.begin();
-
   pinMode(A0, OUTPUT);
 }
 
@@ -48,20 +43,6 @@ void loop() {
   x = x - 4;
   y = y + 4.8;
   z = z + 2.75;
-
-  unsigned long currentMillis = millis();
-
-  if(currentMillis - prevMillis > timeInterval)
-  {
-    Serial.print("X: ");
-    Serial.println(x);
-    Serial.print("Y: ");
-    Serial.println(y);
-    Serial.print("Z: ");
-    Serial.println(z);
-
-    prevMillis = currentMillis;
-  }
 
   int changeX = abs(x - prevX);
   int changeY = abs(y - prevY);
