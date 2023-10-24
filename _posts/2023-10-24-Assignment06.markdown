@@ -1,0 +1,96 @@
+---
+layout: post
+title:  "Assignment 06: Input-output"
+date:   2023-10-24 22:56:25 +0200
+categories: jekyll update
+---
+
+### **Input-Output**  
+
+#### 1. Intro
+
+My project for this assignment utilizes a gyroscope to register a minor movement (shake, tilt, push etc), and then sends an output signal that lights up a blue LED. I am using the built-in gyroscope in the Adafruit Feather Bluefruit Sense nRF52840 board. 
+
+![LED On](https://github.com/PrinceSig/ADA525/issues/2#issue-1960042924){: width="250" }
+![LED Off](https://github.com/PrinceSig/ADA525/issues/1#issue-1960042571){: width="250" }
+
+Here follows the arduino code I wrote for this project: 
+
+{% highlight C++ %}
+#include <Arduino.h>
+#include <Arduino_LSM6DS3.h>
+#include <Adafruit_BMP280.h>
+
+// put function declarations here:
+
+
+unsigned long prevMillis;
+const int timeInterval = 500;
+
+float x, y, z;
+float prevX, prevY, prevZ;
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  IMU.begin();
+
+  pinMode(A0, OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+  IMU.readGyroscope(x, y, z);
+  
+  // Cheaty calibration math:
+
+  x = x - 4;
+  y = y + 4.8;
+  z = z + 2.75;
+
+  unsigned long currentMillis = millis();
+
+  if(currentMillis - prevMillis > timeInterval)
+  {
+    Serial.print("X: ");
+    Serial.println(x);
+    Serial.print("Y: ");
+    Serial.println(y);
+    Serial.print("Z: ");
+    Serial.println(z);
+
+    prevMillis = currentMillis;
+  }
+
+  int changeX = abs(x - prevX);
+  int changeY = abs(y - prevY);
+  int changeZ = abs(z - prevZ);
+
+  if (changeX > 100 || changeY > 100 || changeZ > 100)
+  {
+    analogWrite(A0, 1023);
+    delay(1000);
+  }
+  else
+  {
+    analogWrite(A0, 0);
+  }
+}
+{% endhighlight %}
+
+#### 2. What am I measuring?
+
+Using a gyroscope I am measuring angular velocity. A different way to view it, is that the gyro senses movement or change in orientation across all 3 axes (x, y and z). This means that I can register the physical motions that the gyroscope is exposed to, be it linear or rotational.
+
+#### 3. Do I have a sufficient sample rate?
+
+For the purpose of this assignment, the sample rate of the relevant board is sufficient. Through a simple experiment using the "millis()" and "Serial.print()" functions, I have found that my code (void loop) runs approximately 1080 times (loops) per second, and I make the assumption that is the frequency of measurements that I get from the gyro. In this project a sufficiently large change in orientation, as registered by the gyro, makes a LED-diode light up. For this purpose, I would say the sample rate is well within the requirement. 
+
+#### 4. Is the data what I expect?
+
+The data in question would be the registered values for the angular velocity in axes x, y and z. I have found that these vary slightly for a stationary gyro, and that the gyro produce minor, linear errors. These errors were easily eliminated through a few simple lines of arithmetic math in the program code. I did not really know what to expect, as it is my first time working with a gyroscope. However, I originally believed that the gyroscope measured orientation, which is not exactly the case. As angular velocity is what is measured, it would be more accurate to say that a gyro measure change in orientation. This is still not a comprehensive way to see it, as motion through space (maintaining the same orientation) also results in measurable angular momentum. In other words the data is pretty close to what I (should have) expected.
+
+#### 5. What are the power requirements of my application?
+
+The power required for my application is generally very little. I made a very simplistic input/output system using only the Adafruit board, a micro USB cable and a blue LED diode. The only required power was that which was supplied from my laptop's USB port (< 5W). Further requirements with regard to computational and memory power are approximately 
