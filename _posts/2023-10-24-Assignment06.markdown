@@ -12,7 +12,7 @@ categories: jekyll update
 My project for this assignment utilizes a gyroscope to register a minor movement (shake, tilt, push etc), and then sends an output signal that lights up a blue LED. I am using the built-in gyroscope in the Adafruit Feather Bluefruit Sense nRF52840 board. 
 
 ![LED On](https://github.com/PrinceSig/ADA525/issues/2#issue-1960042924)
-![LED Off](![Ass06_OFF](https://github.com/PrinceSig/ADA525/assets/94006886/fcca7386-b11e-4bf6-b826-d558e2fd3e2e))
+![Ass06_OFF](https://github.com/PrinceSig/ADA525/assets/94006886/fcca7386-b11e-4bf6-b826-d558e2fd3e2e)
 
 Here follows the arduino code I wrote for this project: 
 
