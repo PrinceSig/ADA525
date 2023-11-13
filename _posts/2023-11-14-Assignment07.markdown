@@ -111,4 +111,4 @@ updateData();
 
 The result is a webpage that displays a line plot, with up to 100 random values between 0 and 100. The graph is updated every 6 seconds. When the limit of 100 values is reached (after 10 minutes), the graph shifts to the left and so that the most recent 100 values are displayed. I am satisfied with the end result, as well as with the knowledge I have gained in working with this assignment (although plenty more could be done to make the webpage more advanced and/or aestethically pleasing).
 
-![ass07_1](https://github.com/PrinceSig/ADA525/assets/94006886/d3b3f120-d5d5-4832-942f-c627ebce9eb0){: width="350" }
+![ass07_1](https://github.com/PrinceSig/ADA525/assets/94006886/d3b3f120-d5d5-4832-942f-c627ebce9eb0){: width="700" }
