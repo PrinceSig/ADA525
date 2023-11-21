@@ -63,7 +63,8 @@ void loop() {
 
 #### 2. What am I measuring?
 
-Using a gyroscope I am measuring angular velocity. A different way to view it, is that the gyro senses movement or change in orientation across all 3 axes (x, y and z). This means that I can register the physical motions that the gyroscope is exposed to, be it linear or rotational.
+Using a gyroscope I am measuring angular velocity. A different way to view it, is that the gyro senses movement or change in orientation across all 3 axes (x, y and z). This means that I can register the physical motions that the gyroscope is exposed to.
+<!-- be it linear or rotational -->
 
 #### 3. Do I have a sufficient sample rate?
 
@@ -71,8 +72,10 @@ For the purpose of this assignment, the sample rate of the relevant board is suf
 
 #### 4. Is the data what I expect?
 
-The data in question would be the registered values for the angular velocity in axes x, y and z. I have found that these vary slightly for a stationary gyro, and that the gyro produce minor, linear errors. These errors were easily eliminated through a few simple lines of arithmetic math in the program code. I did not really know what to expect, as it is my first time working with a gyroscope. However, I originally believed that the gyroscope measured orientation, which is not exactly the case. As angular velocity is what is measured, it would be more accurate to say that a gyro measure change in orientation. This is still not a comprehensive way to see it, as motion through space (maintaining the same orientation) also results in measurable angular momentum. In other words the data is pretty close to what I (should have) expected.
+The data in question would be the registered values for the angular velocity in axes x, y and z. I have found that these vary slightly for a stationary gyro, and that the gyro produce minor, linear errors. These errors were easily eliminated through a few simple lines of arithmetic math in the program code. I did not really know what to expect, as it is my first time working with a gyroscope. However, I originally believed that the gyroscope measured orientation, which is not exactly the case. As angular velocity is what is measured, it would be more accurate to say that a gyro measure *change* in orientation. 
+<!-- This is still not a comprehensive way to see it, as motion through space (maintaining the same orientation) also results in measurable angular momentum. In other words the data is pretty close to what I (should have) expected. -->
 
 #### 5. What are the power requirements of my application?
 
-The power required for my application is generally very little. I made a very simplistic input/output system using only the Adafruit board, a micro USB cable and a blue LED diode. The only required power was that which was supplied from my laptop's USB port (< 5W). Further requirements with regard to computational and memory power are approximately 
+The power required for my application is generally very little. I made a very simplistic input/output system using only the Adafruit board, a micro USB cable and a blue LED diode. The only required power was that which was supplied from my laptop's USB port (< 5W). 
+<!-- Further requirements with regard to computational and memory power are approximately  -->

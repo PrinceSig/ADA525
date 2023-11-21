@@ -7,7 +7,7 @@ categories: jekyll update
 
 ### **Web server 2**  
 
-In this assignment I extended the simple server application from the previous assignment (assignment 7), and replaced the random data with gyroscope data from a microcontroller. The data is fed to the server application through serial transmission using a serial port (eg. "COM3" on a Windows computer). I used the chart.js package.
+In this assignment I extended the simple server application from the previous assignment (assignment 7), and replaced the random data with gyroscope data from a microcontroller. The data is fed to the server application through serial transmission using a serial port (eg. "COM3" on a Windows computer). I used the serialport package to allow the server application to recieve data as serial input from an "Adafruit Feather Bluefruit Sense" sensor-board.
 
 #### Code
 
