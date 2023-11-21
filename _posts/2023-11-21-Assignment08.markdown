@@ -1,0 +1,114 @@
+---
+layout: post
+title:  "Assignment 08: Web server 2"
+date:   2023-11-21 22:00:00 +0200
+categories: jekyll update
+---
+
+### **Web server 2**  
+
+For this assignment I have created a simple server application that displays a chart on a website. The site/page shows a chart with a graph (line plot). The graph updates every 6 seconds with a new data point. The data consists of random values between 0 and 100. For visualisation of the data, I used the chart.js package.
+
+#### Code
+
+My project consists of files written in javascript (.js), javacript object notation (.json), and hypertext markup language (.html). The project has the regular package files, the main program file called "app.js", and a folder named "public", where I created two files called "app.js" and "index.html".
+
+Here is the code for my main program file:
+
+{% highlight javascript %}
+const express = require('express');
+const app = express();
+
+app.use(express.static('public'));
+
+app.get('/data', (req, res) => {
+  // Returning a random value between 0 and 100.
+  const data = { value: Math.random() * 100 };
+  res.json(data);
+});
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+{% endhighlight %}
+
+The code for "app.js" inside the "public" folder:
+
+{% highlight javascript %}
+const ctx = document.getElementById('data-chart').getContext('2d');
+const dataChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: [],
+    datasets: [
+      {
+        label: 'Data',
+        data: [],
+        borderColor: 'rgba(75, 192, 192, 1)', // Set line color
+        borderWidth: 2,
+        fill: true,
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    scales: {
+      x: [{
+        type: 'time', // Set the x-axis to be a time scale
+      }],
+      y: {
+        beginAtZero: true,
+      },
+    },
+    plugins: {
+      title: {
+        display: true,
+        text: 'Real-time Data Chart', // Set chart title
+      },
+      legend: {
+        position: 'top', // Set legend position
+      },
+    },
+  },
+});
+
+function updateData() {
+  fetch('/data')
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data); // Log the data object to check its content, this can be viewed in the browser's console
+
+      const timestamp = new Date(); // Create a Date object with the current time
+      const timeString = timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      
+      dataChart.data.labels.push(timeString);
+      dataChart.data.datasets[0].data.push(data.value);
+
+      // Limit the number of data points to display (e.g., last 10)
+      const maxDataPoints = 100;
+      if (dataChart.data.labels.length > maxDataPoints) {
+        dataChart.data.labels.shift();
+        dataChart.data.datasets[0].data.shift();
+      }
+
+      dataChart.update();
+    })
+    .catch((error) => {
+      console.error('Error fetching data:', error);
+    });
+}
+
+// Update data every 6 seconds
+setInterval(updateData, 6000);
+
+// Initial data update
+updateData();
+{% endhighlight %}
+
+#### Result
+
+The result is a webpage that displays a line plot, with up to 100 random values between 0 and 100. The graph is updated every 6 seconds. When the limit of 100 values is reached (after 10 minutes), the graph shifts to the left and so that the most recent 100 values are displayed. I am satisfied with the end result, as well as with the knowledge I have gained in working with this assignment (although plenty more could be done to make the webpage more advanced and/or aestethically pleasing).
+
+![ass07_1](https://github.com/PrinceSig/ADA525/assets/94006886/d3b3f120-d5d5-4832-942f-c627ebce9eb0){: width="700" }
