@@ -1,36 +1,44 @@
 ---
 layout: post
 title:  "Assignment 08: Web server 2"
-date:   2023-11-21 22:00:00 +0200
+date:   2023-11-21 20:30:00 +0200
 categories: jekyll update
 ---
 
 ### **Web server 2**  
 
-For this assignment I have created a simple server application that displays a chart on a website. The site/page shows a chart with a graph (line plot). The graph updates every 6 seconds with a new data point. The data consists of random values between 0 and 100. For visualisation of the data, I used the chart.js package.
+In this assignment I extended the simple server application from the previous assignment (assignment 7), and replaced the random data with gyroscope data from a microcontroller. The data is fed to the server application through serial transmission using a serial port (eg. "COM3" on a Windows computer). I used the chart.js package.
 
 #### Code
 
-My project consists of files written in javascript (.js), javacript object notation (.json), and hypertext markup language (.html). The project has the regular package files, the main program file called "app.js", and a folder named "public", where I created two files called "app.js" and "index.html".
+My project consists of the same three files as in assignment 7, written in javascript (.js), javacript object notation (.json), and hypertext markup language (.html). The project has the regular package files, the main program file called "app.js", and a folder named "public", that contains the two files "app.js" and "index.html". The code from assignment 7 has been reused to some degree, but some significant changes were made to include serial input.
 
 Here is the code for my main program file:
 
 {% highlight javascript %}
 const express = require('express');
+const SerialPort = require('serialport');
+const Readline = require('@serialport/parser-readline');
+
 const app = express();
+const port = 3000;
+
+// Serial port setup
+const serialport = new SerialPort({path: 'COM3'}, { baudRate: 9600 }); // Change 'COM3' to your Arduino port
+const parser = serialport.pipe(new Readline({ delimiter: '\r\n' }));
 
 app.use(express.static('public'));
 
 app.get('/data', (req, res) => {
-  // Returning a random value between 0 and 100.
-  const data = { value: Math.random() * 100 };
-  res.json(data);
+  // Read data from Arduino and send it to the client
+  parser.on('data', (data) => {
+    const jsonData = { value: parseFloat(data) };
+    res.json(jsonData);
+  });
 });
 
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
 {% endhighlight %}
 
@@ -78,30 +86,23 @@ function updateData() {
   fetch('/data')
     .then((response) => response.json())
     .then((data) => {
-      console.log(data); // Log the data object to check its content, this can be viewed in the browser's console
-
-      const timestamp = new Date(); // Create a Date object with the current time
-      const timeString = timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-      
-      dataChart.data.labels.push(timeString);
+      const timestamp = new Date();
+      dataChart.data.labels.push(timestamp);
       dataChart.data.datasets[0].data.push(data.value);
 
-      // Limit the number of data points to display (e.g., last 10)
-      const maxDataPoints = 100;
+      const maxDataPoints = 10;
       if (dataChart.data.labels.length > maxDataPoints) {
         dataChart.data.labels.shift();
         dataChart.data.datasets[0].data.shift();
       }
 
       dataChart.update();
+      updateData(); // Recursive call for continuous updates
     })
     .catch((error) => {
       console.error('Error fetching data:', error);
     });
 }
-
-// Update data every 6 seconds
-setInterval(updateData, 6000);
 
 // Initial data update
 updateData();
