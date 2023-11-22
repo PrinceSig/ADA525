@@ -110,5 +110,7 @@ updateData();
 
 #### Result
 
-The result is a webpage that displays values for each axis in a 3 dimensional space (x, y, z), where each value corresponds to the angular velocity of the respective axes, as measured by the integrated gyroscope of the Adafruit Bluefruit Sense. The values are updated every second. I planned to make the visual representation more interesting, but visualizing gyro data in a reasonable way proved to be a challenge. Including a graph that displayed the historical movements in each axis was a more feasible addition to my project, but this was also excluded in the end due to limited time... 
+The result is a webpage that displays values for each axis in a 3 dimensional space (x, y, z), where each value corresponds to the angular velocity of the respective axis, as measured by the integrated gyroscope of the Adafruit Bluefruit Sense. The values are updated every second. I planned to make the visual representation more interesting, but visualizing gyro data in a reasonable way proved to be a challenge. Including a graph that displayed the historical movements in each axis seemed to be a reasonable addition to my project, but in the end this was also excluded due to limited time resources... 
+
+![ass08](https://github.com/PrinceSig/ADA525/assets/94006886/8d27f180-96c2-4c63-a543-9b14babcb900){: width="700" }
  
