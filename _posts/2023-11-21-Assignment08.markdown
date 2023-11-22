@@ -110,6 +110,5 @@ updateData();
 
 #### Result
 
-The result is a webpage that displays a line plot, with up to 100 random values between 0 and 100. The graph is updated every 6 seconds. When the limit of 100 values is reached (after 10 minutes), the graph shifts to the left and so that the most recent 100 values are displayed. I am satisfied with the end result, as well as with the knowledge I have gained in working with this assignment (although plenty more could be done to make the webpage more advanced and/or aestethically pleasing).
-
-![ass07_1](https://github.com/PrinceSig/ADA525/assets/94006886/d3b3f120-d5d5-4832-942f-c627ebce9eb0){: width="700" }
+The result is a webpage that displays values for each axis in a 3 dimensional space (x, y, z), where each value corresponds to the angular velocity of the respective axes, as measured by the integrated gyroscope of the Adafruit Bluefruit Sense. The values are updated every second. I planned to make the visual representation more interesting, but visualizing gyro data in a reasonable way proved to be a challenge. Including a graph that displayed the historical movements in each axis was a more feasible addition to my project, but this was also excluded in the end due to limited time... 
+ 
